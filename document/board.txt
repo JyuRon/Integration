@@ -1,0 +1,61 @@
+1. @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+- 테스트 코드 실행시 지정된 embedded db 에서만 동작하는데 이를 직접 지정해 줄수 있는 방법에 관한 설정
+- 아래 조건에 대한 설정을 yml에서 관리할 수 있다.
+    @ActiveProfiles("testdb")
+    @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+        => test.database.replace: none
+
+2. jpa 테스트 작성
+- 기본 crud와 cascade 확인
+- update 테스트 시 saveAndFlush 가 사용된 이유
+    @DataJpaTest 의 경우 각 메소드 단위로 롤백
+    Jpa 입장에서 결국 롤백되기 때문에 update 실행 하지 않음
+    update 문을 확인하고자 saveAndFlush 사용
+
+3. AuditingFields 추출(생정자, 생성일시, 수정자, 수정일시)
+- Article, ArticleComment 에 선언된 @Table(index)의 경우 @MappedSuperclass 를 사용한 객체를 상속받아 사용할 수 없어 수정 없이 사용
+
+
+4. Spring Data Rest 조회 테스트 코드 작성 (DataRestTest.java)
+- @WebMvcTest : RestRepository Auto Configuration 을 불러오지 못해 에러가 발생하여 사용하지 않는다.
+- 이로 인해 slice 테스트가 아니게 되어 @Transactional 을 사용하여 DB를 사용하는 테스트 진행시 롤백
+- repository test에는 @DataJpaTest가 사용되었으며 @Transactional 이 붙어 있음
+- spring data rest 통합테스트는 불필요하므로 제외시킴
+- 비즈니스 로직으로 구현한 것이 아닌 data rest 기능을 사용하였으며 db에도 영향을 줌
+- 또한 spring boot context를 호출하여 테스트가 무거워져 제외
+
+
+5. query dsl 검색 옵션 추가
+- 참고 url : https://jaime-note.tistory.com/80v
+- HAL Explorer를 활용하여 검색 기능 추가 및 테스트
+- http://127.0.0.1:8080/api/articleComments?content=Gravida
+- QuerydslPredicateExecutor : 완전히 일치하는 검색이 가능(대소문자 구분 안함)
+- QuerydslBinderCustomizer : QuerydslPredicateExecutor 의 사용만으로는 한계가 존재하기 때문에 검색 옵션의 커스텀 적용을 제공
+
+6.spring boot configuration processor 의존성 추가
+- 사용자 정의 application property 를 좀더 IDE 에서 편리하게 연동하여 사용하기 위해 추가
+
+7. thymeleaf decoupled logic 설정
+- java code 로 thymeleaf 3 decoupled logic을 사용자 application property 로 제어할 수 있게 설정 추가
+- https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#decoupled-template-logic
+
+
+8. Spring Security 2.7 이상 설정
+- https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.7-Release-Notes
+- https://spring.io/blog/2022/02/21/spring-security-without-the-websecurityconfigureradapter
+
+
+9. data rest projection
+UserAccount api 노출 추가 + data rest projection 을 이용한 데이터 노출 필드 설정
+
+- `UserAccount`를 노출할 api로 추가해 줌.
+- 이렇게 하면 다른 게시글, 댓글 등의 data rest api 노출 데이터 형식이 원하지 않는 스타일로 바뀌게 된다.
+- 이를 수동으로 설정하기 위해 projection 기능을 사용하여 노출할 필드들을 직접 지정함.
+
+===========================================
+- https://docs.spring.io/spring-data/rest/docs/current/reference/html/#projections-excerpts.projections.hidden-data
+- @RepositoryRestResource 가 붙은 Entity Repository 는 하나의 json 이 아닌 링크 형태로 정보를 제공하게 된다.
+- 게시글과 회원정보를 모두 불러오고 싶은 경우 2번의 요청이 있어야 하며 리소스가 낭비된다.
+- 이를 해결하고자 Projection 을 사용한다.
+
+

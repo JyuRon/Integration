@@ -1,3 +1,31 @@
 * git ignore 생성
 https://www.toptal.com/developers/gitignore
 
+* OSIV
+https://ykh6242.tistory.com/entry/JPA-OSIVOpen-Session-In-View%EC%99%80-%EC%84%B1%EB%8A%A5-%EC%B5%9C%EC%A0%81%ED%99%94
+
+* Rest Repository
+https://supawer0728.github.io/2018/03/20/spring-data-rest/
+https://docs.spring.io/spring-data/rest/docs/current/reference/html/
+
+* OAuth2
+https://developers.kakao.com/docs/latest/ko/kakaologin/rest-api#request-code
+
+* OAuth2 - authorization-grant-type
+https://oauth.net/2/grant-types/authorization-code/
+
+* bootstrap
+https://getbootstrap.com/
+https://bootdey.com/
+
+* query dsl
+https://jaime-note.tistory.com/80v
+
+* thymeleaf-decoupled-logic
+https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#decoupled-template-logic
+
+* Spring Security 2.7 이상 설정
+- https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.7-Release-Notes
+- https://spring.io/blog/2022/02/21/spring-security-without-the-websecurityconfigureradapter
+
+
