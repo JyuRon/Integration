@@ -4,7 +4,7 @@ management.endpoints.web.exposure.include: "*"
 
 logging:
     level:
-        com.example.projectboard: debug
+        com.jyuka: debug
         org.springframework.web.servlet: debug
         org.hibernate.type.descriptor.sql.BasicBinder: trace
 
