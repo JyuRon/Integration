@@ -20,8 +20,11 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
 
     // Security
-//    implementation 'org.springframework.boot:spring-boot-starter-security'
-//    testImplementation 'org.springframework.security:spring-security-test'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    testImplementation 'org.springframework.security:spring-security-test'
+
+    // OAuth2 추가
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 
     // Redis
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'

@@ -13,6 +13,7 @@
     - use-case, api 명세서를 최대한 만들어보자
     - DevTools, configuration processor 를 사용하여 application.yml 을 적용해보자
     - git hub release 활용해보자
+    - profile 분리
 
 * 기존 학습 코드를 가져와야 할 항목
 1. 게시판
