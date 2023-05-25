@@ -1,0 +1,3 @@
+* git ignore 생성
+https://www.toptal.com/developers/gitignore
+

@@ -1,0 +1,4 @@
+rootProject.name = 'Integration'
+
+include 'web'
+include 'common'

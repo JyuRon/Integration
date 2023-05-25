@@ -1,0 +1,10 @@
+### 대출 신청 등록
+POST http://localhost:8080/
+Content-Type: application/json
+
+< ./json/CreateMember.json
+
+### 대출 신청 내역 조회
+GET http://localhost:8080/applications/1
+Content-Type: application/json
+
