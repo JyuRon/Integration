@@ -2,7 +2,7 @@ package com.jyuka.service;
 
 import com.jyuka.dto.ArticleCommentDto;
 import com.jyuka.dto.UserAccountDto;
-import com.jyuka.dto.properties.ProjectProperties;
+import com.jyuka.config.ProjectProperties;
 import com.jyuka.dto.response.ArticleCommentClientResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.DisplayName;

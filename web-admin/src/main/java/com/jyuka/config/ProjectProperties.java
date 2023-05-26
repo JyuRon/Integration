@@ -1,4 +1,4 @@
-package com.jyuka.dto.properties;
+package com.jyuka.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

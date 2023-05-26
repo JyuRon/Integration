@@ -1,7 +1,7 @@
 package com.jyuka.service;
 
 import com.jyuka.dto.UserAccountDto;
-import com.jyuka.dto.properties.ProjectProperties;
+import com.jyuka.config.ProjectProperties;
 import com.jyuka.dto.response.UserAccountClientResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
