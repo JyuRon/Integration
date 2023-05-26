@@ -2,3 +2,4 @@ rootProject.name = 'Integration'
 
 include 'web'
 include 'common'
+include 'web-admin'
