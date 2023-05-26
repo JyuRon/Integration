@@ -35,6 +35,10 @@ public record UserAccountDto(
         return new UserAccountDto(userId, userPassword, email, nickname, memo, createdAt, createdBy, modifiedAt, modifiedBy);
     }
 
+    public static UserAccountDto of(String nickname) {
+        return new UserAccountDto(null, null, null, nickname, null, null, null, null, null);
+    }
+
     public static UserAccountDto from(UserAccount entity){
         return new UserAccountDto(
                 entity.getUserId(),

@@ -1,6 +1,7 @@
 package com.jyuka.board.domain;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
@@ -8,6 +9,7 @@ import javax.persistence.*;
 @Entity
 @ToString(callSuper = true)
 @Getter
+@NoArgsConstructor
 public class PartyMember extends AuditingFields{
 
     @Id
@@ -21,4 +23,15 @@ public class PartyMember extends AuditingFields{
 
     @ManyToOne
     private Party party;
+
+    public PartyMember(int rewardOrder, UserAccount userAccount, Party party) {
+        this.rewardOrder = rewardOrder;
+        this.userAccount = userAccount;
+        this.party = party;
+    }
+
+    public static PartyMember of(int rewardOrder, UserAccount userAccount, Party party){
+        return new PartyMember(rewardOrder, userAccount, party);
+    }
+
 }
