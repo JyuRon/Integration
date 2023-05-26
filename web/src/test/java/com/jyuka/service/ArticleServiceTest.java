@@ -1,16 +1,16 @@
 package com.jyuka.service;
 
-import com.jyuka.domain.Article;
-import com.jyuka.domain.Hashtag;
-import com.jyuka.domain.UserAccount;
-import com.jyuka.domain.constant.SearchType;
+import com.jyuka.board.domain.Article;
+import com.jyuka.board.domain.Hashtag;
+import com.jyuka.board.domain.UserAccount;
+import com.jyuka.board.constant.SearchType;
 import com.jyuka.dto.ArticleDto;
 import com.jyuka.dto.ArticleWithCommentsDto;
 import com.jyuka.dto.HashtagDto;
 import com.jyuka.dto.UserAccountDto;
-import com.jyuka.repository.ArticleRepository;
-import com.jyuka.repository.HashtagRepository;
-import com.jyuka.repository.UserAccountRepository;
+import com.jyuka.board.repository.ArticleRepository;
+import com.jyuka.board.repository.HashtagRepository;
+import com.jyuka.board.repository.UserAccountRepository;
 import org.assertj.core.api.InstanceOfAssertFactories;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

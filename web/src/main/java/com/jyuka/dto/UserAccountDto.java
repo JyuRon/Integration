@@ -1,16 +1,12 @@
 package com.jyuka.dto;
 
-
-import com.jyuka.board.domain.AdminAccount;
-import com.jyuka.board.constant.RoleType;
+import com.jyuka.board.domain.UserAccount;
 
 import java.time.LocalDateTime;
-import java.util.Set;
 
-public record AdminAccountDto(
+public record UserAccountDto(
         String userId,
         String userPassword,
-        Set<RoleType> roleTypes,
         String email,
         String nickname,
         String memo,
@@ -19,18 +15,16 @@ public record AdminAccountDto(
         LocalDateTime modifiedAt,
         String modifiedBy
 ) {
-    public static AdminAccountDto of(String userId,
+    public static UserAccountDto of(String userId,
                                     String userPassword,
-                                    Set<RoleType> roleTypes,
                                     String email,
                                     String nickname,
                                     String memo) {
-        return AdminAccountDto.of(userId, userPassword, roleTypes, email, nickname, memo, null, null, null, null);
+        return new UserAccountDto(userId, userPassword, email, nickname, memo, null, null, null, null);
     }
-    public static AdminAccountDto of(
+    public static UserAccountDto of(
                           String userId,
                           String userPassword,
-                          Set<RoleType> roleTypes,
                           String email,
                           String nickname,
                           String memo,
@@ -38,14 +32,13 @@ public record AdminAccountDto(
                           String createdBy,
                           LocalDateTime modifiedAt,
                           String modifiedBy) {
-        return new AdminAccountDto(userId, userPassword, roleTypes, email, nickname, memo, createdAt, createdBy, modifiedAt, modifiedBy);
+        return new UserAccountDto(userId, userPassword, email, nickname, memo, createdAt, createdBy, modifiedAt, modifiedBy);
     }
 
-    public static AdminAccountDto from(AdminAccount entity){
-        return new AdminAccountDto(
+    public static UserAccountDto from(UserAccount entity){
+        return new UserAccountDto(
                 entity.getUserId(),
                 entity.getUserPassword(),
-                entity.getRoleTypes(),
                 entity.getEmail(),
                 entity.getNickname(),
                 entity.getMemo(),
@@ -56,11 +49,10 @@ public record AdminAccountDto(
         );
     }
 
-    public  AdminAccount toEntity(){
-        return AdminAccount.of(
+    public  UserAccount toEntity(){
+        return UserAccount.of(
                 userId,
                 userPassword,
-                roleTypes,
                 email,
                 nickname,
                 memo

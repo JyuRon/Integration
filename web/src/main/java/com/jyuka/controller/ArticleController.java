@@ -1,7 +1,7 @@
 package com.jyuka.controller;
 
-import com.jyuka.domain.constant.FormStatus;
-import com.jyuka.domain.constant.SearchType;
+import com.jyuka.board.constant.FormStatus;
+import com.jyuka.board.constant.SearchType;
 import com.jyuka.dto.request.ArticleRequest;
 import com.jyuka.dto.response.ArticleResponse;
 import com.jyuka.dto.response.ArticleWithCommentsResponse;

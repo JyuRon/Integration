@@ -1,9 +1,13 @@
 package com.jyuka.repository;
 
-import com.jyuka.domain.Article;
-import com.jyuka.domain.ArticleComment;
-import com.jyuka.domain.Hashtag;
-import com.jyuka.domain.UserAccount;
+import com.jyuka.board.domain.Article;
+import com.jyuka.board.domain.ArticleComment;
+import com.jyuka.board.domain.Hashtag;
+import com.jyuka.board.domain.UserAccount;
+import com.jyuka.board.repository.ArticleCommentRepository;
+import com.jyuka.board.repository.ArticleRepository;
+import com.jyuka.board.repository.HashtagRepository;
+import com.jyuka.board.repository.UserAccountRepository;
 import org.assertj.core.api.InstanceOfAssertFactories;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

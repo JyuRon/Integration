@@ -1,6 +1,6 @@
 package com.jyuka.config;
 
-import com.jyuka.domain.constant.RoleType;
+import com.jyuka.board.constant.RoleType;
 import com.jyuka.dto.AdminAccountDto;
 import com.jyuka.service.AdminAccountService;
 import org.springframework.boot.test.context.TestConfiguration;

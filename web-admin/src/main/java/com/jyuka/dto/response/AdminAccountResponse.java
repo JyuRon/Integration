@@ -1,6 +1,6 @@
 package com.jyuka.dto.response;
 
-import com.jyuka.domain.constant.RoleType;
+import com.jyuka.board.constant.RoleType;
 import com.jyuka.dto.AdminAccountDto;
 
 import java.time.LocalDateTime;

@@ -1,12 +1,12 @@
 package com.jyuka.service;
 
-import com.jyuka.domain.Article;
-import com.jyuka.domain.ArticleComment;
-import com.jyuka.domain.UserAccount;
+import com.jyuka.board.domain.Article;
+import com.jyuka.board.domain.ArticleComment;
+import com.jyuka.board.domain.UserAccount;
 import com.jyuka.dto.ArticleCommentDto;
-import com.jyuka.repository.ArticleCommentRepository;
-import com.jyuka.repository.ArticleRepository;
-import com.jyuka.repository.UserAccountRepository;
+import com.jyuka.board.repository.ArticleCommentRepository;
+import com.jyuka.board.repository.ArticleRepository;
+import com.jyuka.board.repository.UserAccountRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

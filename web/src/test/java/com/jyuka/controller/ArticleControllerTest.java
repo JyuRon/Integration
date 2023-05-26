@@ -1,8 +1,8 @@
 package com.jyuka.controller;
 
 import com.jyuka.config.TestSecurityConfig;
-import com.jyuka.domain.constant.FormStatus;
-import com.jyuka.domain.constant.SearchType;
+import com.jyuka.board.constant.FormStatus;
+import com.jyuka.board.constant.SearchType;
 import com.jyuka.dto.ArticleDto;
 import com.jyuka.dto.ArticleWithCommentsDto;
 import com.jyuka.dto.HashtagDto;

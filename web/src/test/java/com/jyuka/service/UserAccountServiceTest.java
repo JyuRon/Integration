@@ -1,8 +1,8 @@
 package com.jyuka.service;
 
-import com.jyuka.domain.UserAccount;
+import com.jyuka.board.domain.UserAccount;
 import com.jyuka.dto.UserAccountDto;
-import com.jyuka.repository.UserAccountRepository;
+import com.jyuka.board.repository.UserAccountRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

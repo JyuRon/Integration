@@ -1,7 +1,7 @@
 package com.jyuka.service;
 
-import com.jyuka.domain.Hashtag;
-import com.jyuka.repository.HashtagRepository;
+import com.jyuka.board.domain.Hashtag;
+import com.jyuka.board.repository.HashtagRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

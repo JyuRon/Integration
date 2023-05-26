@@ -1,7 +1,7 @@
 package com.jyuka.service;
 
-import com.jyuka.domain.Hashtag;
-import com.jyuka.repository.HashtagRepository;
+import com.jyuka.board.domain.Hashtag;
+import com.jyuka.board.repository.HashtagRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

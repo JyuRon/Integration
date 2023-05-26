@@ -1,8 +1,9 @@
 package com.jyuka.repository;
 
 
-import com.jyuka.domain.AdminAccount;
-import com.jyuka.domain.constant.RoleType;
+import com.jyuka.board.domain.AdminAccount;
+import com.jyuka.board.constant.RoleType;
+import com.jyuka.board.repository.AdminAccountRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

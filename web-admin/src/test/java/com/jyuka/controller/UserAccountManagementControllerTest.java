@@ -1,13 +1,11 @@
 package com.jyuka.controller;
 
 import com.jyuka.config.GlobalControllerConfig;
-import com.jyuka.config.SecurityConfig;
 import com.jyuka.config.TestSecurityConfig;
 import com.jyuka.dto.UserAccountDto;
 import com.jyuka.service.UserAccountManagementService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.internal.configuration.GlobalConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;

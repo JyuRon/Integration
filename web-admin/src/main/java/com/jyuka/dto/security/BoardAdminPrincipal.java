@@ -1,6 +1,6 @@
 package com.jyuka.dto.security;
 
-import com.jyuka.domain.constant.RoleType;
+import com.jyuka.board.constant.RoleType;
 import com.jyuka.dto.AdminAccountDto;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

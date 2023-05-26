@@ -2,7 +2,7 @@ package com.jyuka.controller;
 
 import com.jyuka.config.GlobalControllerConfig;
 import com.jyuka.config.SecurityConfig;
-import com.jyuka.domain.constant.RoleType;
+import com.jyuka.board.constant.RoleType;
 import com.jyuka.dto.AdminAccountDto;
 import com.jyuka.service.AdminAccountService;
 import org.junit.jupiter.api.DisplayName;

@@ -1,6 +1,6 @@
 package com.jyuka.config;
 
-import com.jyuka.domain.constant.RoleType;
+import com.jyuka.board.constant.RoleType;
 import com.jyuka.dto.security.BoardAdminPrincipal;
 import com.jyuka.dto.security.KakaoOAuth2Response;
 import com.jyuka.service.AdminAccountService;
