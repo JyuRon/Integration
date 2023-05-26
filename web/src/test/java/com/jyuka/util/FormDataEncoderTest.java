@@ -1,6 +1,9 @@
 package com.jyuka.util;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jyuka.dto.request.PartyMemberRequest;
+import com.jyuka.dto.request.PartyWithMemberRequest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +59,23 @@ class FormDataEncoderTest {
                         "&bigDecimal=10" +
                         "&testEnum=THREE"
         );
+    }
+
+    @Test
+    void makeJson() throws JsonProcessingException {
+        PartyWithMemberRequest request = PartyWithMemberRequest.of(
+                "cafe",
+                List.of(
+                        PartyMemberRequest.of("user1",1),
+                        PartyMemberRequest.of("user2",2),
+                        PartyMemberRequest.of("user3",3),
+                        PartyMemberRequest.of("user4",4),
+                        PartyMemberRequest.of("user5",5),
+                        PartyMemberRequest.of("user6",6)
+                        ),
+                true
+        );
+        System.out.println(formDataEncoder.objectToPrettyJson(request));
     }
 
     record TestObject(

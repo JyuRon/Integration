@@ -1,0 +1,5 @@
+### 파티생성
+POST http://localhost:8080/party/create
+Content-Type: application/json
+
+< ./json/CreateParty.json

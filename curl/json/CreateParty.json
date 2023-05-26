@@ -1,0 +1,23 @@
+{
+  "partyName" : "americano",
+  "partyMemberRequest" : [ {
+    "nickName" : "user1",
+    "rewardOrder" : 1
+  }, {
+    "nickName" : "user2",
+    "rewardOrder" : 2
+  }, {
+    "nickName" : "user3",
+    "rewardOrder" : 3
+  }, {
+    "nickName" : "user4",
+    "rewardOrder" : 4
+  }, {
+    "nickName" : "user5",
+    "rewardOrder" : 5
+  }, {
+    "nickName" : "user6",
+    "rewardOrder" : 6
+  } ],
+  "rewardOrderUse" : true
+}

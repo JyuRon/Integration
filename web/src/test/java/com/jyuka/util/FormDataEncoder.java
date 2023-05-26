@@ -1,5 +1,6 @@
 package com.jyuka.util;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.test.context.TestComponent;
@@ -18,6 +19,9 @@ public class FormDataEncoder {
         this.mapper = mapper;
     }
 
+    public String objectToPrettyJson(Object obj) throws JsonProcessingException {
+        return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(obj);
+    }
 
     public String encode(Object obj) {
         Map<String, String> fieldMap = mapper.convertValue(obj, new TypeReference<>() {});
@@ -42,5 +46,7 @@ public class FormDataEncoder {
                 .build()
                 .getPath();
     }
+
+
 
 }
