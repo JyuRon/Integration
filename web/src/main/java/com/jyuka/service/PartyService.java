@@ -21,10 +21,8 @@ import java.util.UUID;
 public class PartyService {
 
     private final PartyRepository partyRepository;
-    private final PartyMemberRepository partyMemberRepository;
     private final UserAccountRepository userAccountRepository;
-    private final PasswordEncoder passwordEncoder;
-    private final UserAccountService userAccountService;
+    private final PartyMemberService partyMemberService;
 
     @Transactional
     public String createParty(PartyWithMemberDto dto){
@@ -35,21 +33,11 @@ public class PartyService {
         // 파티 정보를 생성
         Party savedParty = partyRepository.save(dto.fromParty(master));
 
-
         // 닉네임을 기준으로 기존 회원인지 판별, 존재하지 않는 회원이면 임시 아이디를 생성하여 파티원 정보 입력
         dto.partyMemberDtoList().forEach(
-                partyMemberDto -> {
-                    String nickName = partyMemberDto.userAccountDto().nickname();
-                    String dummyId = "tmp_" + nickName;
-                    String dummyPassword = passwordEncoder.encode("{bcrypt}" + UUID.randomUUID());
-                    UserAccount userAccount = userAccountRepository.findByNickname(nickName)
-                            .orElseGet(() -> userAccountRepository.save(
-                                    UserAccount.of(dummyId, dummyPassword, null, nickName, null)
-                                    )
-                            );
-                    partyMemberRepository.save(partyMemberDto.from(userAccount, savedParty));
-                }
+                partyMemberDto -> partyMemberService.insertMemberInParty(partyMemberDto, savedParty)
         );
+
         return "success";
     }
 

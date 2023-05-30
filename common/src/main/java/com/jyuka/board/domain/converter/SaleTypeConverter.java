@@ -9,7 +9,7 @@ import javax.persistence.Converter;
 public class SaleTypeConverter implements AttributeConverter<SaleType, String> {
     @Override
     public String convertToDatabaseColumn(SaleType attribute) {
-        return attribute.getName();
+        return attribute.name();
     }
 
     @Override

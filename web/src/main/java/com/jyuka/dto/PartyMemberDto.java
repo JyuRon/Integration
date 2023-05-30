@@ -26,14 +26,11 @@ public record PartyMemberDto(
     }
 
     // TODO : view 페이지 구현 후 인증정보 발생 시 변경 필요
-    public PartyMember from(UserAccount userAccount, Party party){
+    public PartyMember toEntity(UserAccount userAccount, Party party){
         return PartyMember.of(
                 rewardOrder,
                 userAccount,
                 party
         );
     }
-
-
-
 }

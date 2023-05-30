@@ -17,6 +17,7 @@ public class SaleService {
 
     private final SaleHistoryRepository saleHistoryRepository;
     private final PartyRepository partyRepository;
+    private final DistributionService distributionService;
 
     @Transactional
     public String insertSaleItem(SaleHistoryDto saleHistoryDto){
@@ -31,7 +32,11 @@ public class SaleService {
                 saleHistoryDto.saleType()
         );
 
-        saleHistoryRepository.save(salesHistory);
+        SalesHistory result = saleHistoryRepository.save(salesHistory);
+
+        // 분배 품목 등록시 파티원 해당 품목에 대한 분해 현황 초기화
+        distributionService.initDistribution(saleHistoryDto.partyId(), result);
+
 
         return "success";
     }
