@@ -1,0 +1,5 @@
+### 분배 품복 등록
+POST http://localhost:8080/sales/create
+Content-Type: application/json
+
+< ./json/CreateSaleHistory.json

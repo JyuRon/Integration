@@ -38,7 +38,7 @@ public class SecurityConfig{
         return http
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-                        .mvcMatchers("/api/**", "/party/**").permitAll()
+                        .mvcMatchers("/api/**", "/party/**", "/sales/**").permitAll()
                         .mvcMatchers(
                                 HttpMethod.GET,
                                 "/",
@@ -56,6 +56,7 @@ public class SecurityConfig{
                 )
                 .csrf(csrf -> csrf.ignoringAntMatchers("/api/**"))
                 .csrf(csrf -> csrf.ignoringAntMatchers("/party/**"))
+                .csrf(csrf -> csrf.ignoringAntMatchers("/sales/**"))
                 .build();
     }
 
